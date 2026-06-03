@@ -1,0 +1,295 @@
+.overview-page {
+  display: grid;
+  gap: 18px;
+}
+
+.overview-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 320px;
+  gap: 18px;
+  align-items: stretch;
+  padding: 22px;
+  border: 1px solid rgba(191, 219, 254, .18);
+  border-radius: 8px;
+  background: linear-gradient(135deg, #0b1222 0%, #123057 58%, #0f766e 135%);
+  color: #fff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, .13);
+}
+
+.overview-hero h2 {
+  margin-top: 8px;
+  font-size: clamp(34px, 4vw, 58px);
+  line-height: .95;
+}
+
+.overview-hero p:not(.eyebrow) {
+  max-width: 650px;
+  margin-top: 12px;
+  color: #c7d8ef;
+  font-size: 17px;
+  line-height: 1.5;
+}
+
+.overview-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 24px;
+}
+
+.overview-pills span {
+  padding: 9px 12px;
+  border: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .08);
+  color: #e6f2ff;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.overview-health-card {
+  display: grid;
+  align-content: center;
+  gap: 10px;
+  padding: 18px;
+  border: 1px solid rgba(255, 255, 255, .16);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, .09);
+}
+
+.overview-health-card span {
+  color: #bfdbfe;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.overview-health-card strong {
+  font-size: 48px;
+  line-height: 1;
+}
+
+.overview-health-card p {
+  margin: 0;
+  color: #dbeafe;
+  line-height: 1.45;
+}
+
+.health-meter {
+  height: 10px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, .14);
+}
+
+.health-meter span {
+  display: block;
+  width: 78%;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #38bdf8, #22c55e);
+}
+
+.forecast-panel {
+  padding: 18px;
+  border: 1px solid #dce6f4;
+  border-radius: 8px;
+  background: linear-gradient(180deg, #fff, #f8fbff);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, .07);
+  animation: fade-up .42s ease both;
+}
+
+.forecast-heading,
+.forecast-dashboard,
+.chart-toolbar,
+.forecast-cards {
+  display: flex;
+}
+
+.forecast-heading {
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.forecast-dashboard {
+  gap: 16px;
+  align-items: stretch;
+}
+
+.forecast-main {
+  display: grid;
+  min-width: 0;
+  flex: 1;
+  gap: 12px;
+}
+
+.forecast-cards {
+  gap: 12px;
+}
+
+.forecast-card {
+  flex: 1;
+  min-width: 0;
+  padding: 14px;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.forecast-card span,
+.chart-toolbar span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.forecast-card strong {
+  display: block;
+  margin-top: 8px;
+  color: #0f172a;
+  font-size: 28px;
+  line-height: 1;
+}
+
+.forecast-card small {
+  display: block;
+  margin-top: 8px;
+  color: #64748b;
+}
+
+.forecast-chart-card {
+  min-height: 360px;
+  padding: 14px;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.chart-toolbar {
+  justify-content: flex-end;
+  gap: 14px;
+  margin-bottom: 8px;
+}
+
+.chart-toolbar span {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.legend-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+}
+
+.legend-dot.blue {
+  background: #2563eb;
+}
+
+.legend-dot.green {
+  background: #16a34a;
+}
+
+.overview-chart {
+  height: 315px;
+}
+
+.movement-card {
+  display: grid;
+  width: 330px;
+  gap: 14px;
+  padding: 16px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background: #eff6ff;
+}
+
+.movement-card h3 {
+  margin-top: 4px;
+}
+
+.movement-list {
+  display: grid;
+  gap: 10px;
+}
+
+.movement-list button {
+  display: grid;
+  gap: 6px;
+  padding: 13px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  background: #fff;
+  color: #0f172a;
+  text-align: left;
+  transition: border-color .2s ease, transform .2s ease, box-shadow .2s ease;
+}
+
+.movement-list button:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, .09);
+  transform: translateY(-1px);
+}
+
+.movement-list .badge {
+  justify-self: start;
+}
+
+.movement-list small {
+  color: #64748b;
+  line-height: 1.35;
+}
+
+.overview-lower-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(340px, .8fr);
+  gap: 18px;
+}
+
+.overview-main-stack,
+.overview-side-stack {
+  display: grid;
+  align-content: start;
+  gap: 18px;
+}
+
+@media (max-width: 1180px) {
+  .overview-hero,
+  .forecast-dashboard,
+  .overview-lower-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .forecast-dashboard {
+    display: grid;
+  }
+
+  .movement-card {
+    width: auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .overview-hero,
+  .forecast-panel {
+    padding: 16px;
+  }
+
+  .forecast-heading,
+  .forecast-cards {
+    flex-direction: column;
+  }
+
+  .chart-toolbar {
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .overview-chart {
+    height: 280px;
+  }
+}

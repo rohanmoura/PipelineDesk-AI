@@ -1,0 +1,118 @@
+@media (max-width: 1180px) {
+  .app-shell {
+    grid-template-columns: 84px minmax(0, 1fr);
+  }
+
+  .brand div:last-child,
+  .nav-item span,
+  .sidebar-panel {
+    display: none;
+  }
+
+  .sidebar {
+    align-items: center;
+    padding-inline: 12px;
+  }
+
+  .nav-item {
+    justify-content: center;
+    width: 48px;
+  }
+
+  .page-grid,
+  .split-layout,
+  .proposal-layout,
+  .handoff-hero,
+  .handoff-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .client-row {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .followup-summary {
+    grid-template-columns: 1fr;
+  }
+
+  .followup-stats {
+    justify-content: flex-start;
+  }
+
+  .detail-panel {
+    order: -1;
+  }
+}
+
+@media (max-width: 760px) {
+  .app-shell {
+    display: block;
+  }
+
+  .sidebar {
+    position: static;
+    height: auto;
+    align-items: stretch;
+  }
+
+  .brand div:last-child,
+  .nav-item span {
+    display: block;
+  }
+
+  .nav-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .nav-item {
+    width: auto;
+    justify-content: flex-start;
+  }
+
+  .workspace {
+    padding: 16px;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbar-actions,
+  .primary-button,
+  .ghost-button {
+    width: 100%;
+  }
+
+  .status-strip {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .metric {
+    min-width: 0;
+  }
+
+  .milestones,
+  .client-grid,
+  .detail-list {
+    grid-template-columns: 1fr;
+  }
+
+  .task {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .task-actions {
+    justify-content: stretch;
+  }
+
+  .task-actions button {
+    flex: 1;
+  }
+
+  .client-row {
+    grid-template-columns: 1fr;
+  }
+}

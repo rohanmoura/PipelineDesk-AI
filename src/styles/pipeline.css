@@ -1,0 +1,181 @@
+.pipeline-shell {
+  padding: 16px;
+  border: 1px solid #dce6f2;
+  border-radius: 8px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, .94), rgba(244, 248, 252, .94));
+  box-shadow: 0 16px 36px rgba(15, 23, 42, .07);
+}
+
+.pipeline-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 16px;
+}
+
+.board-summary {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.board-summary span {
+  padding: 8px 11px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #1d4ed8;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.pipeline-board {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 12px;
+  padding: 2px;
+}
+
+.stage-column {
+  min-height: 360px;
+  padding: 10px;
+  border: 1px solid #dbe5f0;
+  border-radius: 8px;
+  background: #f3f7fb;
+  animation: fade-up .42s ease both;
+}
+
+.stage-column:nth-child(2) {
+  animation-delay: .05s;
+}
+
+.stage-column:nth-child(3) {
+  animation-delay: .1s;
+}
+
+.stage-column:nth-child(4) {
+  animation-delay: .15s;
+}
+
+.stage-column:nth-child(5) {
+  animation-delay: .2s;
+}
+
+.stage-column:nth-child(6) {
+  animation-delay: .25s;
+}
+
+.stage-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 10px;
+  padding: 4px 2px 8px;
+}
+
+.stage-heading strong,
+.stage-heading small {
+  display: block;
+}
+
+.stage-heading small {
+  margin-top: 4px;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+}
+
+.stage-heading span {
+  display: grid;
+  min-width: 28px;
+  height: 28px;
+  place-items: center;
+  border-radius: 999px;
+  background: #fff;
+  color: #475569;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.deal-card {
+  display: grid;
+  gap: 9px;
+  margin-bottom: 11px;
+  padding: 14px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  background: #fff;
+  transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
+}
+
+.deal-card:hover {
+  border-color: #bfdbfe;
+  box-shadow: 0 12px 22px rgba(15, 23, 42, .08);
+  transform: translateY(-1px);
+}
+
+.deal-head,
+.deal-meta,
+.client-card div {
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.deal-head span {
+  padding: 4px 7px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #2563eb;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.deal-meta span {
+  color: #334155;
+  font-size: 13px;
+  font-weight: 800;
+}
+
+.probability-track {
+  height: 7px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #e2e8f0;
+}
+
+.probability-track i {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: linear-gradient(90deg, #38bdf8, #2563eb);
+}
+
+.deal-actions {
+  display: grid;
+  grid-template-columns: 1fr 92px;
+  gap: 8px;
+}
+
+.deal-action {
+  min-height: 34px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #1d4ed8;
+  font-weight: 800;
+}
+
+.deal-action:hover {
+  background: #dbeafe;
+}
+
+.deal-action.lost {
+  border-color: #fee2e2;
+  background: #fff5f5;
+  color: #b91c1c;
+}
+
+.deal-action.lost:hover {
+  background: #fee2e2;
+}
