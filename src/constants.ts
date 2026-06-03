@@ -1,9 +1,11 @@
 import {
   BarChart3,
   BriefcaseBusiness,
+  Building2,
   ClipboardList,
   LayoutDashboard,
   ListChecks,
+  PlugZap,
   Settings,
   Sparkles,
   Users,
@@ -19,6 +21,8 @@ export const navItems = [
   ['Follow-ups', ListChecks],
   ['Proposal AI', Sparkles],
   ['Handoff', ClipboardList],
+  ['Clients', Building2],
+  ['Integrations', PlugZap],
   ['Analytics', BarChart3],
   ['Settings', Settings],
 ] as const
@@ -32,6 +36,8 @@ export const viewToHash: Record<ViewName, string> = {
   'Follow-ups': 'follow-ups',
   'Proposal AI': 'proposal-ai',
   Handoff: 'handoff',
+  Clients: 'clients',
+  Integrations: 'integrations',
   Analytics: 'analytics',
   Settings: 'settings',
 }

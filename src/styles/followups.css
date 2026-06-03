@@ -1,0 +1,59 @@
+.followup-section {
+  display: grid;
+  gap: 12px;
+}
+
+.task em {
+  display: block;
+  margin-top: 6px;
+  padding: 8px 10px;
+  border-left: 3px solid #93c5fd;
+  background: #f8fafc;
+  color: #475569;
+  font-style: normal;
+  line-height: 1.35;
+}
+
+.task > .task-workflow {
+  display: grid;
+  min-width: min(360px, 100%);
+  gap: 8px;
+}
+
+.task-workflow label {
+  display: grid;
+  gap: 5px;
+}
+
+.task-workflow label span {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.task-workflow input,
+.task-workflow textarea {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  background: #fff;
+  outline: 0;
+}
+
+.task-workflow textarea {
+  resize: vertical;
+}
+
+.task-workflow input:focus,
+.task-workflow textarea:focus {
+  border-color: #2563eb;
+  box-shadow: 0 0 0 4px rgba(37, 99, 235, .1);
+}
+
+@media (max-width: 760px) {
+  .task > .task-workflow {
+    min-width: 0;
+  }
+}

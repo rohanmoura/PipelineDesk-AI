@@ -22,8 +22,11 @@
   .page-grid,
   .split-layout,
   .proposal-layout,
+  .integrations-layout,
   .pipeline-workspace,
+  .handoff-detail-grid,
   .handoff-hero,
+  .integrations-hero,
   .handoff-grid {
     grid-template-columns: 1fr;
   }
@@ -89,6 +92,30 @@
     width: 100%;
   }
 
+  .panel {
+    padding: 14px;
+  }
+
+  .panel-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .toolbar,
+  .client-toolbar,
+  .analytics-filters {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .search-box,
+  .filter-control,
+  .client-toolbar label:not(.search-box),
+  .analytics-filters label {
+    min-width: 0;
+    width: 100%;
+  }
+
   .role-display {
     width: 100%;
     justify-content: space-between;
@@ -133,5 +160,16 @@
 
   .client-row {
     grid-template-columns: 1fr;
+  }
+
+  .client-actions,
+  .client-actions button,
+  .modal-actions,
+  .modal-actions button {
+    width: 100%;
+  }
+
+  .modal-actions {
+    flex-direction: column-reverse;
   }
 }

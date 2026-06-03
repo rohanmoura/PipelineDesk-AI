@@ -1,12 +1,13 @@
 import { Plus, Search } from 'lucide-react'
 import { useState } from 'react'
 import { EmptyState } from '../components/common'
-import type { Lead, TeamMember } from '../types'
+import type { Lead, LeadNote, TeamMember } from '../types'
 import { scoreTone } from '../utils'
 import { AddLeadModal } from './AddLeadModal'
 import { LeadDetail } from './LeadDetail'
 
 export function LeadsView({
+  canEdit,
   filteredLeads,
   budget,
   setBudget,
@@ -28,7 +29,13 @@ export function LeadsView({
   selectedLead,
   setSelectedLeadId,
   onCreateLead,
+  onAddFollowUp,
+  onAddNote,
+  onConvertToDeal,
+  onUpdateOwner,
+  selectedLeadNotes,
 }: {
+  canEdit: boolean
   filteredLeads: Lead[]
   budget: string
   setBudget: (value: string) => void
@@ -50,6 +57,11 @@ export function LeadsView({
   selectedLead: Lead
   setSelectedLeadId: (value: string) => void
   onCreateLead: (lead: Lead) => void
+  onAddFollowUp: (lead: Lead) => void
+  onAddNote: (leadId: string, message: string) => void
+  onConvertToDeal: (lead: Lead) => void
+  onUpdateOwner: (leadId: string, ownerId: string) => void
+  selectedLeadNotes: LeadNote[]
 }) {
   const [isAddingLead, setIsAddingLead] = useState(false)
 
@@ -61,7 +73,7 @@ export function LeadsView({
             <p className="eyebrow">Lead intelligence</p>
             <h2>{filteredLeads.length} matching opportunities</h2>
           </div>
-          <button className="primary-button" type="button" onClick={() => setIsAddingLead(true)}>
+          <button className="primary-button" type="button" disabled={!canEdit} onClick={() => setIsAddingLead(true)}>
             <Plus size={17} /> Add lead
           </button>
         </div>
@@ -145,7 +157,16 @@ export function LeadsView({
         </div>
         {filteredLeads.length === 0 && <EmptyState title="No leads match this filter" />}
       </section>
-      <LeadDetail lead={selectedLead} />
+      <LeadDetail
+        lead={selectedLead}
+        notes={selectedLeadNotes}
+        onAddFollowUp={onAddFollowUp}
+        onAddNote={onAddNote}
+        onConvertToDeal={onConvertToDeal}
+        onUpdateOwner={onUpdateOwner}
+        canEdit={canEdit}
+        owners={owners}
+      />
       {isAddingLead && (
         <AddLeadModal
           onClose={() => setIsAddingLead(false)}

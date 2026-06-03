@@ -150,6 +150,70 @@ tbody tr.selected-row {
   background: linear-gradient(135deg, #eff6ff, #ecfeff);
 }
 
+.detail-owner,
+.note-composer {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 14px;
+}
+
+.detail-owner span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.lead-action-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  margin-bottom: 14px;
+}
+
+.note-composer {
+  padding: 14px;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.note-composer div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.note-composer textarea {
+  width: 100%;
+  padding: 10px 11px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  resize: vertical;
+}
+
+.lead-note-list {
+  display: grid;
+  gap: 10px;
+}
+
+.lead-note-list div {
+  display: grid;
+  gap: 4px;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2f7;
+}
+
+.lead-note-list strong {
+  color: #2563eb;
+  font-size: 12px;
+}
+
+.lead-note-list span {
+  color: #475569;
+  line-height: 1.4;
+}
+
 .modal-backdrop {
   position: fixed;
   inset: 0;

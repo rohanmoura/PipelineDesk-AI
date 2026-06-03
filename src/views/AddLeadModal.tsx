@@ -1,5 +1,6 @@
 import { X } from 'lucide-react'
 import { type FormEvent, useState } from 'react'
+import { StateNotice } from '../components/common'
 import type { Lead } from '../types'
 
 const services = ['AI MVP build', 'Internal dashboard', 'Marketplace MVP', 'Creator SaaS', 'AI workflow automation']
@@ -18,9 +19,14 @@ export function AddLeadModal({
   const [source, setSource] = useState(sources[0])
   const [budgetRange, setBudgetRange] = useState('$6k-$10k')
   const [summary, setSummary] = useState('Client operations dashboard for tracking leads, invoices, and delivery tasks.')
+  const [error, setError] = useState('')
 
   function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault()
+    if (!/\d/.test(budgetRange)) {
+      setError('Add a budget range with a number, for example $6k-$10k.')
+      return
+    }
     const id = `lead-${Date.now()}`
     onCreate({
       id,
@@ -56,6 +62,7 @@ export function AddLeadModal({
           </button>
         </div>
 
+        {error && <StateNotice title="Invalid budget" text={error} tone="error" />}
         <div className="form-grid">
           <label>
             <span>Company</span>

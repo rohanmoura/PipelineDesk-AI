@@ -76,3 +76,20 @@ export type Activity = {
   actor: string
   createdAt: string
 }
+
+export type LeadNote = {
+  id: string
+  leadId: string
+  message: string
+  createdAt: string
+}
+
+export type IntegrationDemo = {
+  id: string
+  name: string
+  category: 'Email' | 'Calendar' | 'Alert' | 'Webhook'
+  status: 'Connected' | 'Ready to connect' | 'Needs review'
+  description: string
+  sampleEvent: string
+  result: string
+}

@@ -4,7 +4,11 @@
 @import './styles/overview.css';
 @import './styles/views.css';
 @import './styles/crm.css';
+@import './styles/clients.css';
 @import './styles/pipeline.css';
+@import './styles/proposal.css';
+@import './styles/integrations.css';
 @import './styles/analytics.css';
+@import './styles/followups.css';
 @import './styles/settings.css';
 @import './styles/responsive.css';

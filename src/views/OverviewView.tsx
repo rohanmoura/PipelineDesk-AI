@@ -10,6 +10,7 @@ import {
   XAxis,
   YAxis,
 } from 'recharts'
+import { StateNotice } from '../components/common'
 import { activity, deals, leads, revenueTrend, sourceData, tasks } from '../data'
 import { type ViewName } from '../constants'
 import { aiRecommendation, currency, scoreTone } from '../utils'
@@ -119,6 +120,13 @@ export function OverviewView({ setActiveView }: { setActiveView: (view: ViewName
               ))}
             </div>
           </aside>
+        </div>
+        <div className="forecast-warning">
+          <StateNotice
+            title="Proposal movement risk"
+            text="Forecast is healthy, but stuck proposal-stage deals need follow-up pressure before the close window slips."
+            tone="warning"
+          />
         </div>
       </section>
 

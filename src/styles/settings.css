@@ -31,3 +31,102 @@
   color: #64748b;
   line-height: 1.4;
 }
+
+.team-row select {
+  min-width: 150px;
+}
+
+.settings-workbench {
+  display: grid;
+  gap: 14px;
+}
+
+.settings-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.setting-card {
+  display: grid;
+  align-content: start;
+  gap: 12px;
+  padding: 14px;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.setting-card > div:first-child,
+.range-control,
+.switch-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.setting-card > div:first-child span,
+.setting-card p,
+.range-control span,
+.switch-row span {
+  color: #64748b;
+}
+
+.setting-card > div:first-child span,
+.range-control span,
+.switch-row span {
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.range-control {
+  display: grid;
+  grid-template-columns: 72px minmax(0, 1fr) 46px;
+}
+
+.range-control input {
+  width: 100%;
+}
+
+.stage-toggle-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.stage-toggle-list label,
+.switch-row {
+  padding: 9px;
+  border: 1px solid #edf2f7;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.stage-toggle-list label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.import-card button {
+  width: 100%;
+}
+
+@media (max-width: 1180px) {
+  .settings-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .settings-grid,
+  .stage-toggle-list {
+    grid-template-columns: 1fr;
+  }
+
+  .team-row select {
+    width: 100%;
+  }
+}

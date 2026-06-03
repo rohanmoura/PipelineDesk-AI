@@ -1,4 +1,4 @@
-import type { Activity, Client, Deal, Lead, Task, TeamMember } from './types'
+import type { Activity, Client, Deal, IntegrationDemo, Lead, Task, TeamMember } from './types'
 
 export const team: TeamMember[] = [
   { id: 'tm-1', name: 'Karan Mehta', role: 'Owner', email: 'karan@kmaxdesign.com' },
@@ -273,4 +273,43 @@ export const revenueTrend = [
   { month: 'Apr', pipeline: 31000, won: 9800 },
   { month: 'May', pipeline: 40500, won: 11800 },
   { month: 'Jun', pipeline: 48500, won: 14200 },
+]
+
+export const integrationDemos: IntegrationDemo[] = [
+  {
+    id: 'int-email',
+    name: 'Gmail lead capture',
+    category: 'Email',
+    status: 'Connected',
+    description: 'Turns inbound inquiry emails into lead drafts with source, budget, service type, and next action.',
+    sampleEvent: 'New email from founder@northstar.ai asking for an AI dashboard quote.',
+    result: 'Lead draft created with AI dashboard service, medium priority, and follow-up due tomorrow.',
+  },
+  {
+    id: 'int-calendar',
+    name: 'Calendar follow-up booking',
+    category: 'Calendar',
+    status: 'Ready to connect',
+    description: 'Creates a calendar hold when a follow-up task is scheduled from the Follow-ups page.',
+    sampleEvent: 'NovaLaunch follow-up scheduled for 2026-06-04.',
+    result: '30-minute discovery follow-up prepared with owner, client email, and deal context.',
+  },
+  {
+    id: 'int-alert',
+    name: 'Slack and WhatsApp alerts',
+    category: 'Alert',
+    status: 'Needs review',
+    description: 'Sends team alerts for overdue follow-ups, high-fit leads, and stuck proposal-stage deals.',
+    sampleEvent: 'CreatorOS is overdue and has high scope risk.',
+    result: 'Owner alert drafted with risk reason, recommended paid discovery, and direct lead link.',
+  },
+  {
+    id: 'int-webhook',
+    name: 'Won deal webhook',
+    category: 'Webhook',
+    status: 'Connected',
+    description: 'Pushes won-deal data into a delivery board or project management tool after handoff starts.',
+    sampleEvent: 'PixelForge product retainer moved to Won.',
+    result: 'Project payload prepared with kickoff checklist, delivery owner, budget, and milestone template.',
+  },
 ]

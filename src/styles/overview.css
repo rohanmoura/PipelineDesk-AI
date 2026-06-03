@@ -118,6 +118,10 @@
   align-items: stretch;
 }
 
+.forecast-warning {
+  margin-top: 14px;
+}
+
 .forecast-main {
   display: grid;
   min-width: 0;

@@ -1,7 +1,6 @@
 import { EmptyState } from '../components/common'
 import { stages } from '../constants'
-import { leads } from '../data'
-import type { Deal, DealStage } from '../types'
+import type { Deal, DealStage, Lead } from '../types'
 import { currency, leadForDeal } from '../utils'
 import { DealDetail } from './DealDetail'
 import { useState } from 'react'
@@ -14,11 +13,15 @@ const nextStage: Partial<Record<DealStage, DealStage>> = {
 }
 
 export function PipelineView({
+  canEdit,
   deals,
+  leads,
   setDeals,
   showToast,
 }: {
+  canEdit: boolean
   deals: Deal[]
+  leads: Lead[]
   setDeals: (deals: Deal[]) => void
   showToast: (message: string) => void
 }) {
@@ -82,7 +85,7 @@ export function PipelineView({
                         <i style={{ width: `${Math.round(deal.probability * 100)}%` }} />
                       </div>
                       <small>{deal.notes}</small>
-                      {!['Won', 'Lost'].includes(deal.stage) && (
+                      {canEdit && !['Won', 'Lost'].includes(deal.stage) && (
                         <div className="deal-actions">
                           <button className="deal-action" type="button" onClick={(event) => { event.stopPropagation(); moveDeal(deal) }}>
                             Move to {nextStage[deal.stage]}
