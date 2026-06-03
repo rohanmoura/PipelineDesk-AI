@@ -29,12 +29,30 @@
   outline: 0;
 }
 
+.filter-control {
+  display: grid;
+  gap: 6px;
+  min-width: 150px;
+}
+
+.filter-control span {
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: .02em;
+  text-transform: uppercase;
+}
+
 select {
   min-height: 40px;
   padding: 0 12px;
   border: 1px solid #dbe3ee;
   border-radius: 8px;
   background: #fff;
+}
+
+.filter-control select {
+  width: 100%;
 }
 
 .table-wrap {

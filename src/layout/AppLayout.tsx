@@ -2,6 +2,7 @@ import { Bell, FileText, Sparkles } from 'lucide-react'
 import { navItems, type ViewName } from '../constants'
 import { Metric } from '../components/common'
 import { currency } from '../utils'
+import type { DemoRole } from '../types'
 
 type Metrics = {
   pipelineValue: number
@@ -14,15 +15,27 @@ type Metrics = {
 
 export function AppLayout({
   activeView,
+  isExporting,
   setActiveView,
   metrics,
+  onExportReport,
+  role,
   children,
 }: {
   activeView: ViewName
+  isExporting: boolean
   setActiveView: (view: ViewName) => void
   metrics: Metrics
+  onExportReport: () => void
+  role: DemoRole
   children: React.ReactNode
 }) {
+  const roleHelp = {
+    Owner: 'Full access to pipeline, exports, reports, and settings.',
+    'Team member': 'Can update assigned leads, follow-ups, deals, and briefs.',
+    Viewer: 'Read-only review mode for dashboards and reports.',
+  }
+
   return (
     <div className="app-shell">
       <aside className="sidebar">
@@ -60,15 +73,23 @@ export function AppLayout({
             <h1>{activeView}</h1>
           </div>
           <div className="topbar-actions">
+            <div className="role-display" aria-label="Current role">
+              <span>Role</span>
+              <strong>{role}</strong>
+            </div>
             <button className="icon-button" type="button" aria-label="Notifications">
               <Bell size={18} />
             </button>
-            <button className="primary-button" type="button">
+            <button className="primary-button" type="button" onClick={onExportReport}>
               <FileText size={17} />
-              Export report
+              {isExporting ? 'Exporting...' : 'Export report'}
             </button>
           </div>
         </header>
+        <div className="permission-strip">
+          <strong>{role}</strong>
+          <span>{roleHelp[role]}</span>
+        </div>
 
         <section className="status-strip" aria-label="Pipeline metrics">
           <Metric title="Pipeline value" value={currency.format(metrics.pipelineValue)} caption="Open deal value" />

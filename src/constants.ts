@@ -20,7 +20,7 @@ export const navItems = [
   ['Proposal AI', Sparkles],
   ['Handoff', ClipboardList],
   ['Analytics', BarChart3],
-  ['Admin', Settings],
+  ['Settings', Settings],
 ] as const
 
 export type ViewName = (typeof navItems)[number][0]
@@ -33,11 +33,12 @@ export const viewToHash: Record<ViewName, string> = {
   'Proposal AI': 'proposal-ai',
   Handoff: 'handoff',
   Analytics: 'analytics',
-  Admin: 'admin',
+  Settings: 'settings',
 }
 
 export function viewFromHash(hash: string): ViewName {
   const cleanHash = hash.replace(/^#/, '')
+  if (cleanHash === 'admin') return 'Settings'
   const match = (Object.entries(viewToHash) as Array<[ViewName, string]>).find(([, value]) => value === cleanHash)
   return match?.[0] ?? 'Overview'
 }

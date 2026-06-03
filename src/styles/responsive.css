@@ -22,9 +22,14 @@
   .page-grid,
   .split-layout,
   .proposal-layout,
+  .pipeline-workspace,
   .handoff-hero,
   .handoff-grid {
     grid-template-columns: 1fr;
+  }
+
+  .deal-detail-panel {
+    position: static;
   }
 
   .client-row {
@@ -82,6 +87,20 @@
   .primary-button,
   .ghost-button {
     width: 100%;
+  }
+
+  .role-display {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .role-card-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .permission-strip {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .status-strip {

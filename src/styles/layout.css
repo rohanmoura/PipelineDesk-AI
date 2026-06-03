@@ -122,8 +122,48 @@
 }
 
 .topbar-actions {
+  align-items: center;
   display: flex;
   gap: 10px;
+}
+
+.role-display {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 38px;
+  padding: 0 10px;
+  border: 1px solid #dbe3ee;
+  border-radius: 8px;
+  background: #fff;
+}
+
+.role-display span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.role-display strong {
+  color: #0f172a;
+}
+
+.permission-strip {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: -8px 0 18px;
+  padding: 10px 12px;
+  border: 1px solid #dbeafe;
+  border-radius: 8px;
+  background: #eff6ff;
+  color: #475569;
+  font-size: 13px;
+}
+
+.permission-strip strong {
+  color: #1d4ed8;
 }
 
 .page-grid {

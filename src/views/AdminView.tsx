@@ -1,14 +1,44 @@
 import { ArrowRight, LockKeyhole, RotateCcw, Settings } from 'lucide-react'
 import { useState } from 'react'
 import { clients, team } from '../data'
+import type { DemoRole } from '../types'
 import { currency } from '../utils'
 
-export function AdminView({ onResetDemo }: { onResetDemo: () => void }) {
+export function AdminView({
+  onResetDemo,
+  role,
+  setRole,
+}: {
+  onResetDemo: () => void
+  role: DemoRole
+  setRole: (role: DemoRole) => void
+}) {
   const configItems = ['Lead scoring rules', 'Pipeline stages', 'Proposal templates', 'Follow-up reminders', 'CSV import/export']
   const [activeConfig, setActiveConfig] = useState(configItems[0])
+  const roleCards: Array<{ label: DemoRole; text: string }> = [
+    { label: 'Owner', text: 'Full access to pipeline, exports, reports, settings, and demo controls.' },
+    { label: 'Team member', text: 'Can work assigned leads, move deals, complete follow-ups, and generate briefs.' },
+    { label: 'Viewer', text: 'Read-only review mode for dashboards, reports, and portfolio demos.' },
+  ]
 
   return (
     <div className="page-grid">
+      <section className="panel panel-wide">
+        <div className="panel-heading compact"><h2>Workspace role</h2><LockKeyhole size={18} /></div>
+        <div className="role-card-grid">
+          {roleCards.map((item) => (
+            <button
+              className={role === item.label ? 'role-card active-role' : 'role-card'}
+              key={item.label}
+              type="button"
+              onClick={() => setRole(item.label)}
+            >
+              <strong>{item.label}</strong>
+              <span>{item.text}</span>
+            </button>
+          ))}
+        </div>
+      </section>
       <section className="panel">
         <div className="panel-heading compact"><h2>Team permissions</h2><LockKeyhole size={18} /></div>
         <div className="stack">

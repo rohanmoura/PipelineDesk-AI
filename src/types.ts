@@ -4,6 +4,7 @@ export type ProposalStatus = 'Not started' | 'Draft' | 'Sent' | 'Viewed' | 'Acce
 export type TaskStatus = 'Open' | 'Completed' | 'Overdue'
 export type Priority = 'High' | 'Medium' | 'Low'
 export type RiskLevel = 'Low' | 'Medium' | 'High'
+export type DemoRole = 'Owner' | 'Team member' | 'Viewer'
 
 export type TeamMember = {
   id: string

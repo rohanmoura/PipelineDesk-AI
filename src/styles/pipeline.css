@@ -1,3 +1,10 @@
+.pipeline-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 360px;
+  gap: 18px;
+  align-items: start;
+}
+
 .pipeline-shell {
   padding: 16px;
   border: 1px solid #dce6f2;
@@ -109,6 +116,11 @@
   transition: border-color .2s ease, box-shadow .2s ease, transform .2s ease;
 }
 
+.deal-card.selected-deal {
+  border-color: #2563eb;
+  box-shadow: 0 12px 24px rgba(37, 99, 235, .12);
+}
+
 .deal-card:hover {
   border-color: #bfdbfe;
   box-shadow: 0 12px 22px rgba(15, 23, 42, .08);
@@ -178,4 +190,102 @@
 
 .deal-action.lost:hover {
   background: #fee2e2;
+}
+
+.deal-detail-panel {
+  position: sticky;
+  top: 24px;
+  display: grid;
+  gap: 16px;
+  padding: 18px;
+  border: 1px solid #dce6f2;
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 16px 36px rgba(15, 23, 42, .08);
+}
+
+.deal-detail-head,
+.deal-detail-actions {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.deal-detail-panel > p {
+  color: #64748b;
+  line-height: 1.45;
+}
+
+.deal-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px;
+}
+
+.deal-detail-grid div,
+.decision-card {
+  display: grid;
+  gap: 5px;
+  min-width: 0;
+  padding: 12px;
+  border: 1px solid #e3e9f2;
+  border-radius: 8px;
+  background: #f8fafc;
+}
+
+.deal-detail-grid svg {
+  color: #2563eb;
+}
+
+.deal-detail-grid span,
+.decision-card span {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.deal-detail-grid strong,
+.decision-card strong,
+.decision-card small {
+  overflow-wrap: anywhere;
+}
+
+.deal-detail-section {
+  display: grid;
+  gap: 10px;
+}
+
+.deal-timeline,
+.deal-task-list {
+  display: grid;
+  gap: 9px;
+}
+
+.deal-timeline span,
+.deal-task-list span {
+  display: grid;
+  gap: 4px;
+  padding: 10px 0;
+  border-bottom: 1px solid #edf2f7;
+  color: #334155;
+}
+
+.deal-timeline i {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  margin-right: 8px;
+  border-radius: 999px;
+  background: #2563eb;
+}
+
+.deal-task-list small {
+  color: #64748b;
+}
+
+.deal-detail-actions {
+  align-items: center;
+  flex-wrap: wrap;
 }
